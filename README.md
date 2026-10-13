@@ -10,7 +10,7 @@
 
 使用 **Node.js 20 或更高版本**及随附的 `npm`。这是本项目采用的运行与测试版本下限：测试使用内置 `node:test`，业务模型使用 `structuredClone` 和 `Array.prototype.findLast`。本次实际验证版本为 Node.js `24.18.0`，其他版本尚未逐一验证。
 
-克隆仓库并进入项目目录（私有仓库需要拥有访问权限）；也可以从 **Code** 按钮下载源码 ZIP 后解压：
+克隆公开仓库并进入项目目录；也可以从 **Code** 按钮下载源码 ZIP 后解压：
 
 ```bash
 git clone https://github.com/ETEZ-AI/PTH.git
