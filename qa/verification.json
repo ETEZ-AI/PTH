@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-13",
+  "status": "local-demo-verified",
+  "url": "http://127.0.0.1:4186/",
+  "node": "v24.18.0",
+  "tests": {
+    "command": "npm test",
+    "passed": 22,
+    "failed": 0
+  },
+  "syntax": "npm run check passed",
+  "browser": "Codex In-app Browser",
+  "browser_verified": [
+    "HJ-001 old-version blocking and source references",
+    "HJ-001 correction R1→R2→R3",
+    "business owner confirmation, quality pass, receiver acceptance, coordinator archive",
+    "export JSON inspected: original v1, current R3, 3 confirmations, 6 sources, 12 audit events",
+    "reload preserved saved archive",
+    "create HJ-004 and detect missing fields",
+    "source failure prevents quality passing; manual restoration requires recheck",
+    "quality return requires reason and preserves issue",
+    "reset restores three initial samples and survives reload",
+    "BPMN preview loads; responsive viewport 390×844, no document horizontal overflow",
+    "final browser error/warn log empty"
+  ],
+  "limits": [
+    "synthetic data only",
+    "rules, no LLM",
+    "demo role switching, no server authentication",
+    "browser localStorage, no multiuser backend",
+    "no enterprise source connection or writeback",
+    "hosting upload rejected by automatic approval review; no deployed site"
+  ],
+  "files": {
+    "dist/app.js": "603e027b42f9e405dd24873698c14e8548f1e98596105256b2402f1dcb63759d",
+    "dist/model.js": "47660177893e8d3adc6c8bbc664e85a7ae3043018d4714206ad2f59ad50cf450",
+    "dist/styles.css": "a667f78f99d39ba06c73daf874e6606a0e81379b1bfa4d5ed8377af06163ef70",
+    "dist/index.html": "0be3c20d843d78da2b7cc152b7bcde49846ea5cb11cdad5d0fa10df2771626e5",
+    "server.mjs": "0ee55110039aa332b0267088e1f7bce0d4ea3de8043b60ef049a47d218b1b628",
+    "dist/assets/overall-flow.bpmn": "ed4c1a881ef832faec536ab49cd53cc6c7a0917d28ef498a0d96bbc7091e710e"
+  },
+  "evidence": [
+    "desktop-preview.png",
+    "mobile-preview.png",
+    "closed-loop.png",
+    "flow-preview.png"
+  ]
+}

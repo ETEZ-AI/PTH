@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3100" height="1420" viewBox="0 0 3100 1420" role="img" aria-labelledby="title desc">
+<title id="title">生产岗位培训与工序交接目标闭环</title>
+<desc id="desc">六泳道目标 BPMN，包含只读规则核对、人工修订确认、质量复核、接收、归档和退回补证回路。规则模式，AI 未接入。合成演示。</desc>
+<style>text{font-family:"PingFang SC","Heiti SC","Microsoft YaHei",sans-serif}</style>
+<rect x="0" y="0" width="3100" height="1420" fill="#FFFFFF" rx="0"/>
+<text x="65" y="58" font-size="38" font-weight="600" text-anchor="start" dominant-baseline="middle" fill="#243E4A">生产岗位培训与工序交接目标闭环</text>
+<text x="65" y="106" font-size="22" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">合成数据演示 · 规则模式 · AI 未接入 · 非执行 BPMN</text>
+<text x="65" y="148" font-size="21" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">先核对依据，再由业务、质量和接收人员分别确认；所有退回和未结项均保留责任与处理记录。</text>
+<rect x="25" y="180" width="3040" height="1020" fill="white" rx="0" stroke="#CAD5DC" stroke-width="1.2"/>
+<rect x="55" y="180" width="3010" height="170" fill="#F7FAFC" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="180" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="241.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">现场</text>
+<text x="106" y="270.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">当班</text>
+<rect x="55" y="350" width="3010" height="170" fill="#FFFFFF" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="350" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="426.0" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">规则辅助</text>
+<text x="106" y="476" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#68808C">规则模式</text>
+<rect x="55" y="520" width="3010" height="170" fill="#F7FAFC" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="520" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="581.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">协调</text>
+<text x="106" y="610.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">资料</text>
+<rect x="55" y="690" width="3010" height="170" fill="#FFFFFF" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="690" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="751.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">业务</text>
+<text x="106" y="780.5" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">负责人</text>
+<rect x="55" y="860" width="3010" height="170" fill="#F7FAFC" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="860" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="936.0" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">质量复核</text>
+<rect x="55" y="1030" width="3010" height="170" fill="#FFFFFF" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<rect x="55" y="1030" width="102" height="170" fill="#E8EFF3" rx="0" stroke="#CAD5DC" stroke-width="1"/>
+<text x="106" y="1106.0" font-size="23" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">接收人员</text>
+<polyline points="251,610 430,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="430,610 430,300" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="430,300 426,309 434,309" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="520,265 620,265" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="620,265 620,400" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="620,400 624,391 616,391" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="710,435 788,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="788,435 779,431 779,439" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="852,435 930,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="930,435 921,431 921,439" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="820,467 820,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="820,610 1020,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1020,610 1011,606 1011,614" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1110,435 1220,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1220,435 1220,300" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1220,300 1216,309 1224,309" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1310,265 1388,265" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1388,265 1379,261 1379,269" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1452,265 1540,265" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1540,265 1531,261 1531,269" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1420,297 1420,510" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1420,510 1110,510" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1110,510 1110,575" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1110,575 1114,566 1106,566" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1200,610 1259,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1259,610 1250,606 1250,614" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1301,610 1360,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1360,610 1351,606 1351,614" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1540,610 1628,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1628,610 1619,606 1619,614" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1660,578 1660,545" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="820" cy="545" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1110" cy="545" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1660,545 620,545" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="620,545 620,470" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="620,470 616,479 624,479" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1660,642 1660,750" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1660,750 1664,741 1656,741" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1750,785 1848,785" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1848,785 1839,781 1839,789" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1880,753 1880,525" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="820" cy="525" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1110" cy="525" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="620" cy="525" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1880,525 520,525" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="520,525 520,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="520,435 530,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="530,435 521,431 521,439" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1880,817 1880,850" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1880,850 1450,850" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1450,850 1450,645" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1450,645 1446,654 1454,654" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1720,265 1830,265" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1830" cy="785" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1830" cy="525" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1830" cy="850" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1830,265 1830,910" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1830,910 1834,901 1826,901" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1920,945 1978,945" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1978,945 1969,941 1969,949" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2010,977 2010,1115" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="2010,1115 2090,1115" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2090,1115 2081,1111 2081,1119" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="1978,945 1950,945" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1950,945 1950,895" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1830" cy="895" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1950,895 1335,895" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1335" cy="610" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1335,895 1335,560" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1335,560 1450,560" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1450,560 1450,575" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1450,575 1454,566 1446,566" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2042,945 2110,945" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="2110,945 2110,720" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1660" cy="720" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1880" cy="720" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1450" cy="720" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1830" cy="720" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1335" cy="720" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="2110,720 1140,720" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1140,720 1140,645" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1140,645 1136,654 1144,654" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2270,1115 2338,1115" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2338,1115 2329,1111 2329,1119" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2402,1115 2520,1115" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="2520,1115 2520,470" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2520,470 2516,479 2524,479" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2370,1147 2370,1190" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="2370,1190 1080,1190" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="1080,1190 1080,645" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1080,645 1076,654 1084,654" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2610,435 2638,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2638,435 2629,431 2629,439" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2702,435 2820,435" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polyline points="2820,435 2820,575" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2820,575 2824,566 2816,566" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2670,467 2670,490" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1420" cy="490" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1830" cy="490" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="2520" cy="490" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="2670,490 1070,490" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="1070" cy="545" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<circle cx="1070" cy="525" r="6.5" fill="white" stroke="white" stroke-width="0"/>
+<polyline points="1070,490 1070,575" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="1070,575 1074,566 1066,566" fill="#617887" stroke="#617887" stroke-width="1"/>
+<polyline points="2910,610 2969,610" fill="none" stroke="#617887" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="2969,610 2960,606 2960,614" fill="#617887" stroke="#617887" stroke-width="1"/>
+<circle cx="230" cy="610" r="21" fill="white" stroke="#243E4A" stroke-width="2"/>
+<text x="265.0" y="661.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">S01 建立交接任务</text>
+<rect x="340.0" y="230.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="430" y="244" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T01</text>
+<text x="430" y="266" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">准备资料</text>
+<text x="430" y="289" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">保留原始来源</text>
+<rect x="530.0" y="400.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="620" y="414" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T02</text>
+<text x="620" y="436" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">只读读取</text>
+<text x="620" y="459" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">与资料关联</text>
+<polygon points="820,403.0 852.0,435 820,467.0 788.0,435" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="812,427 828,443" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="812,443 828,427" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="830.0" y="488.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G01 资料可用？</text>
+<rect x="930.0" y="400.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1020" y="414" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T03</text>
+<text x="1020" y="436" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">规则辅助核对</text>
+<text x="1020" y="459" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">版本／缺项／引用</text>
+<rect x="1130.0" y="230.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1220" y="244" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T04</text>
+<text x="1220" y="266" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">当班字段核对</text>
+<text x="1220" y="289" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">处理核对发现</text>
+<polygon points="1420,233.0 1452.0,265 1420,297.0 1388.0,265" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="1412,257 1428,273" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="1412,273 1428,257" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="1422.5" y="204.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G02 存在阻塞？</text>
+<rect x="1020.0" y="575.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1110" y="589" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T05</text>
+<text x="1110" y="611" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">登记问题并分派</text>
+<text x="1110" y="634" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">责任接受／期限</text>
+<circle cx="1280" cy="610" r="21" fill="white" stroke="#243E4A" stroke-width="2"/>
+<circle cx="1280" cy="610" r="16" fill="white" stroke="#243E4A" stroke-width="1.4"/>
+<rect x="1273" y="599" width="14" height="22" fill="white" rx="0" stroke="#243E4A" stroke-width="1"/>
+<polyline points="1276,604 1284,604" fill="none" stroke="#243E4A" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1276,608 1284,608" fill="none" stroke="#243E4A" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1276,612 1284,612" fill="none" stroke="#243E4A" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1276,616 1284,616" fill="none" stroke="#243E4A" stroke-width="1" stroke-linejoin="round"/>
+<text x="1267.0" y="660" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">W01 等待补证</text>
+<text x="1267.0" y="682" font-size="16" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">处理条件就绪</text>
+<rect x="1360.0" y="575.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1450" y="589" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T06</text>
+<text x="1450" y="611" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">补充或修正</text>
+<text x="1450" y="634" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">保留原值及修订</text>
+<polygon points="1660,578.0 1692.0,610 1660,642.0 1628.0,610" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="1652,602 1668,618" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="1652,618 1668,602" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="1657.5" y="666.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G06 有业务变更？</text>
+<rect x="1570.0" y="750.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1660" y="764" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T07</text>
+<text x="1660" y="786" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">确认业务变更</text>
+<text x="1660" y="809" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">记录当前修订回执</text>
+<polygon points="1880,753.0 1912.0,785 1880,817.0 1848.0,785" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="1872,777 1888,793" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="1872,793 1888,777" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="2022.5" y="768.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G07 负责人确认？</text>
+<rect x="1540.0" y="230.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1630" y="244" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T08</text>
+<text x="1630" y="266" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">提交质量复核</text>
+<text x="1630" y="289" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">锁定送审修订</text>
+<rect x="1740.0" y="910.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="1830" y="924" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T09</text>
+<text x="1830" y="946" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">人工质量复核</text>
+<text x="1830" y="969" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">通过／退回／待核查</text>
+<polygon points="2010,913.0 2042.0,945 2010,977.0 1978.0,945" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="2002,937 2018,953" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="2002,953 2018,937" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="2015.5" y="885.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G03 质量结论</text>
+<rect x="2090.0" y="1080.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="2180" y="1094" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T10</text>
+<text x="2180" y="1116" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">接收核对</text>
+<text x="2180" y="1139" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">核对同一修订</text>
+<polygon points="2370,1083.0 2402.0,1115 2370,1147.0 2338.0,1115" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="2362,1107 2378,1123" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="2362,1123 2378,1107" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="2375.0" y="1168.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G04 接收确认？</text>
+<rect x="2430.0" y="400.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="2520" y="414" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T11</text>
+<text x="2520" y="436" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">归档条件检查</text>
+<text x="2520" y="459" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">修订／来源／确认链</text>
+<polygon points="2670,403.0 2702.0,435 2670,467.0 2638.0,435" fill="#FFFCF0" stroke="#243E4A" stroke-width="2"/>
+<polyline points="2662,427 2678,443" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<polyline points="2662,443 2678,427" fill="none" stroke="#243E4A" stroke-width="2.3" stroke-linejoin="round"/>
+<text x="2670.0" y="380.0" font-size="17.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">G05 闭环条件满足？</text>
+<rect x="2730.0" y="575.0" width="180" height="70" fill="#FFFFFF" rx="9" stroke="#243E4A" stroke-width="1.8"/>
+<text x="2820" y="589" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#7A8A93">T12</text>
+<text x="2820" y="611" font-size="18.5" font-weight="600" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">归档证据包</text>
+<text x="2820" y="634" font-size="18.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">冻结本次记录</text>
+<circle cx="2990" cy="610" r="21" fill="white" stroke="#243E4A" stroke-width="4"/>
+<text x="2960.0" y="665.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">E01 交接记录闭环</text>
+<rect x="871" y="403" width="50" height="26" fill="#FFFFFF" rx="0"/>
+<text x="896.0" y="416.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">是</text>
+<rect x="835" y="570" width="178" height="30" fill="#FFFFFF" rx="0"/>
+<text x="924.0" y="585.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">否：读取失败／歧义</text>
+<rect x="1468" y="231" width="55" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1495.5" y="245.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">否</text>
+<rect x="1434" y="340" width="54" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1461.0" y="354.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">是</text>
+<rect x="663" y="513" width="274" height="27" fill="#FFFFFF" rx="0"/>
+<text x="800.0" y="526.5" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">仅补证：重新核对</text>
+<rect x="1670" y="707" width="52" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1696.0" y="721.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">有</text>
+<rect x="1893" y="690" width="160" height="27" fill="#FFFFFF" rx="0"/>
+<text x="1973.0" y="703.5" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">确认后重核</text>
+<rect x="1535" y="817" width="150" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1610.0" y="831.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">退回修正</text>
+<rect x="2023" y="1050" width="75" height="28" fill="#FFFFFF" rx="0"/>
+<text x="2060.5" y="1064.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">通过</text>
+<rect x="1525" y="906" width="155" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1602.5" y="920.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">退回修改</text>
+<rect x="2140" y="808" width="100" height="28" fill="#FFFFFF" rx="0"/>
+<text x="2190.0" y="822.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">待核查</text>
+<rect x="2410" y="1070" width="88" height="28" fill="#FFFFFF" rx="0"/>
+<text x="2454.0" y="1084.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">接受</text>
+<rect x="1580" y="1151" width="212" height="28" fill="#FFFFFF" rx="0"/>
+<text x="1686.0" y="1165.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">退回：登记异议</text>
+<rect x="2740" y="401" width="52" height="28" fill="#FFFFFF" rx="0"/>
+<text x="2766.0" y="415.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">是</text>
+<rect x="2230" y="495" width="255" height="28" fill="#FFFFFF" rx="0"/>
+<text x="2357.5" y="509.0" font-size="17.5" font-weight="400" text-anchor="middle" dominant-baseline="middle" fill="#243E4A">否：缺证／修订失效</text>
+<polyline points="65,1240 3060,1240" fill="none" stroke="#CAD5DC" stroke-width="1" stroke-linejoin="round"/>
+<text x="65" y="1270" font-size="19" font-weight="600" text-anchor="start" dominant-baseline="middle" fill="#243E4A">阅读提示</text>
+<text x="200" y="1270" font-size="19" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">菱形 X 为排他判断；双圈为条件等待；顺序流跨越处无连接；同一池的泳道表示职责分工。</text>
+<text x="65" y="1310" font-size="18.5" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">源系统只读：保留来源 ID、原始值、版本及读取时间；规则输出不是业务审批结论。</text>
+<text x="65" y="1343" font-size="18.5" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">业务变更、质量复核、接收分别人工确认同一修订；关键修订使相关下游确认失效。真实试点仍需原有授权渠道的可核验回执。</text>
+<text x="65" y="1376" font-size="18.5" font-weight="400" text-anchor="start" dominant-baseline="middle" fill="#697E88">W01 等待不结案；暂停为全局办理限制，恢复后重新核对有效性。归档仅代表交接记录闭环，不代表设备操作或生产放行。</text>
+</svg>

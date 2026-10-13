@@ -1,0 +1,980 @@
+{
+  "version": "1.0",
+  "date": "2026-10-13",
+  "source": "https://fde-discovery-lab-67046.app.workbuddy.host/fsg/lab?case=fsg-production-handover",
+  "artifacts": [
+    "传统人工流程.bpmn",
+    "传统人工流程.svg",
+    "传统人工流程.png"
+  ],
+  "model": {
+    "participants": 1,
+    "lanes": 4,
+    "tasks": 14,
+    "exclusive_gateways": 4,
+    "events": 3,
+    "sequence_flows": 25,
+    "message_flows": 0,
+    "executable": false
+  },
+  "checks": {
+    "xml_well_formed": true,
+    "unique_ids": true,
+    "lane_membership_complete": true,
+    "source_target_references_resolve": true,
+    "all_nodes_reachable_from_start": true,
+    "all_nodes_have_possible_path_to_end": true,
+    "gateway_branches_have_conditions": true,
+    "no_default_pass": true,
+    "bpmndi_complete": true,
+    "orthogonal_routing": true,
+    "flows_do_not_intersect_unrelated_nodes": true,
+    "waiting_event_not_end": true
+  },
+  "xsd_validation": "未执行：当前环境无法解析 OMG 下载域名；已完成本地 XML 及语义结构校验。",
+  "editor_import_validation": "未执行，未声称已实际导入编辑器。",
+  "visual": {
+    "svg_size": [
+      2160,
+      2870
+    ],
+    "png_size": [
+      4320,
+      5740
+    ],
+    "png_font": "STHeiti Light / Medium（当前 macOS 可用中文字体）",
+    "svg_font_stack": "PingFang SC, Heiti SC, STHeiti, sans-serif",
+    "line_crossings_without_connection": [
+      [
+        1050,
+        1220
+      ],
+      [
+        1050,
+        1500
+      ],
+      [
+        1050,
+        1660
+      ]
+    ]
+  },
+  "notes": [
+    "建模说明：依据合成访谈重建，待业务确认。已确认主链为任务确认 → 培训记录 → 工序交接 → 异常回报 → 质量复核。",
+    "G01 具体阈值、G03 处理路径、G04 确认关口及接收岗位拆分为建模建议；本图暂按逐单质量复核建模，频次待确认。",
+    "全部任务由人员在原系统或表格办理；W01 为条件等待，未结项不结束流程。E01 仅代表交接记录闭环，不代表生产放行。"
+  ],
+  "nodes": [
+    {
+      "id": "S01",
+      "kind": "startEvent",
+      "name": "任务提出",
+      "lane": "L01",
+      "x": 330,
+      "y": 295,
+      "w": 42,
+      "h": 42,
+      "lines": [
+        "S01 任务提出"
+      ],
+      "label": [
+        376,
+        278,
+        250,
+        34
+      ]
+    },
+    {
+      "id": "T01",
+      "kind": "task",
+      "name": "确认任务范围与适用要求",
+      "lane": "L01",
+      "x": 330,
+      "y": 390,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "确认任务范围",
+        "与适用要求"
+      ]
+    },
+    {
+      "id": "T02",
+      "kind": "task",
+      "name": "收集有效指引及培训资料",
+      "lane": "L02",
+      "x": 830,
+      "y": 530,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "收集有效指引",
+        "及培训资料"
+      ]
+    },
+    {
+      "id": "T03",
+      "kind": "task",
+      "name": "核对培训记录与变更覆盖",
+      "lane": "L02",
+      "x": 830,
+      "y": 660,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "核对培训记录",
+        "与变更覆盖"
+      ]
+    },
+    {
+      "id": "G01",
+      "kind": "exclusiveGateway",
+      "name": "依据明确且记录齐备？",
+      "lane": "L02",
+      "x": 830,
+      "y": 800,
+      "w": 72,
+      "h": 72,
+      "lines": [
+        "G01 依据明确",
+        "且记录齐备？"
+      ],
+      "label": [
+        890,
+        771,
+        178,
+        62
+      ]
+    },
+    {
+      "id": "T04",
+      "kind": "task",
+      "name": "补齐或澄清依据",
+      "lane": "L01",
+      "x": 330,
+      "y": 800,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "补齐或澄清依据"
+      ]
+    },
+    {
+      "id": "T05",
+      "kind": "task",
+      "name": "编制并提交交接包",
+      "lane": "L02",
+      "x": 830,
+      "y": 940,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "编制并提交交接包"
+      ]
+    },
+    {
+      "id": "T06",
+      "kind": "task",
+      "name": "按原始记录核对交接",
+      "lane": "L03",
+      "x": 1330,
+      "y": 1080,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "按原始记录",
+        "核对交接"
+      ]
+    },
+    {
+      "id": "G02",
+      "kind": "exclusiveGateway",
+      "name": "是否发现异常？",
+      "lane": "L03",
+      "x": 1330,
+      "y": 1220,
+      "w": 72,
+      "h": 72,
+      "lines": [
+        "G02 是否",
+        "发现异常？"
+      ],
+      "label": [
+        1388,
+        1245,
+        165,
+        58
+      ]
+    },
+    {
+      "id": "T07",
+      "kind": "task",
+      "name": "登记原始异常",
+      "lane": "L02",
+      "x": 830,
+      "y": 1220,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "登记原始异常"
+      ]
+    },
+    {
+      "id": "T08",
+      "kind": "task",
+      "name": "确认责任人与处理期限",
+      "lane": "L01",
+      "x": 330,
+      "y": 1360,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "确认责任人",
+        "与处理期限"
+      ]
+    },
+    {
+      "id": "T09",
+      "kind": "task",
+      "name": "人工质量复核",
+      "lane": "L04",
+      "x": 1830,
+      "y": 1500,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "人工质量复核"
+      ]
+    },
+    {
+      "id": "G03",
+      "kind": "exclusiveGateway",
+      "name": "复核结论？",
+      "lane": "L04",
+      "x": 1830,
+      "y": 1660,
+      "w": 72,
+      "h": 72,
+      "lines": [
+        "G03 复核结论？"
+      ],
+      "label": [
+        1620,
+        1568,
+        250,
+        36
+      ]
+    },
+    {
+      "id": "T10",
+      "kind": "task",
+      "name": "修正记录并提交变更",
+      "lane": "L02",
+      "x": 830,
+      "y": 1660,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "修正记录",
+        "并提交变更"
+      ]
+    },
+    {
+      "id": "T11",
+      "kind": "task",
+      "name": "授权负责人确认变更",
+      "lane": "L01",
+      "x": 330,
+      "y": 1840,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "授权负责人",
+        "确认变更"
+      ]
+    },
+    {
+      "id": "T12",
+      "kind": "task",
+      "name": "保留未结项并进入人工队列",
+      "lane": "L04",
+      "x": 1830,
+      "y": 1900,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "保留未结项",
+        "并进入人工队列"
+      ]
+    },
+    {
+      "id": "T13",
+      "kind": "task",
+      "name": "记录接收确认意见",
+      "lane": "L03",
+      "x": 1330,
+      "y": 2030,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "记录接收确认意见"
+      ]
+    },
+    {
+      "id": "W01",
+      "kind": "intermediateCatchEvent",
+      "name": "补充证据已提交并触发复核",
+      "lane": "L04",
+      "x": 1830,
+      "y": 2090,
+      "w": 48,
+      "h": 48,
+      "lines": [
+        "W01 补充证据已提交",
+        "并触发复核"
+      ],
+      "label": [
+        1620,
+        2140,
+        370,
+        63
+      ]
+    },
+    {
+      "id": "G04",
+      "kind": "exclusiveGateway",
+      "name": "接收方确认？",
+      "lane": "L03",
+      "x": 1330,
+      "y": 2220,
+      "w": 72,
+      "h": 72,
+      "lines": [
+        "G04 接收方确认？"
+      ],
+      "label": [
+        1388,
+        2193,
+        178,
+        60
+      ]
+    },
+    {
+      "id": "T14",
+      "kind": "task",
+      "name": "归档来源及确认链",
+      "lane": "L01",
+      "x": 330,
+      "y": 2360,
+      "w": 310,
+      "h": 94,
+      "lines": [
+        "归档来源及确认链"
+      ]
+    },
+    {
+      "id": "E01",
+      "kind": "endEvent",
+      "name": "交接记录闭环",
+      "lane": "L01",
+      "x": 330,
+      "y": 2490,
+      "w": 42,
+      "h": 42,
+      "lines": [
+        "E01 交接记录闭环"
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "F01",
+      "source": "S01",
+      "target": "T01",
+      "points": [
+        [
+          330,
+          316
+        ],
+        [
+          330,
+          343
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F02",
+      "source": "T01",
+      "target": "T02",
+      "points": [
+        [
+          330,
+          437
+        ],
+        [
+          330,
+          470
+        ],
+        [
+          830,
+          470
+        ],
+        [
+          830,
+          483
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F03",
+      "source": "T02",
+      "target": "T03",
+      "points": [
+        [
+          830,
+          577
+        ],
+        [
+          830,
+          613
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F04",
+      "source": "T03",
+      "target": "G01",
+      "points": [
+        [
+          830,
+          707
+        ],
+        [
+          830,
+          764
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F05",
+      "source": "G01",
+      "target": "T04",
+      "points": [
+        [
+          794,
+          800
+        ],
+        [
+          485,
+          800
+        ]
+      ],
+      "name": "否",
+      "label": [
+        610,
+        764,
+        90,
+        30
+      ],
+      "condition": "依据不明或记录不齐"
+    },
+    {
+      "id": "F06",
+      "source": "T04",
+      "target": "T02",
+      "points": [
+        [
+          330,
+          753
+        ],
+        [
+          330,
+          530
+        ],
+        [
+          675,
+          530
+        ]
+      ],
+      "name": "补齐后重新核对",
+      "label": [
+        345,
+        552,
+        260,
+        32
+      ],
+      "condition": null
+    },
+    {
+      "id": "F07",
+      "source": "G01",
+      "target": "T05",
+      "points": [
+        [
+          830,
+          836
+        ],
+        [
+          830,
+          893
+        ]
+      ],
+      "name": "是",
+      "label": [
+        844,
+        850,
+        80,
+        28
+      ],
+      "condition": "依据明确且记录齐备"
+    },
+    {
+      "id": "F08",
+      "source": "T05",
+      "target": "T06",
+      "points": [
+        [
+          830,
+          987
+        ],
+        [
+          830,
+          1020
+        ],
+        [
+          1330,
+          1020
+        ],
+        [
+          1330,
+          1033
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F09",
+      "source": "T06",
+      "target": "G02",
+      "points": [
+        [
+          1330,
+          1127
+        ],
+        [
+          1330,
+          1184
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F10",
+      "source": "G02",
+      "target": "T07",
+      "points": [
+        [
+          1294,
+          1220
+        ],
+        [
+          985,
+          1220
+        ]
+      ],
+      "name": "是",
+      "label": [
+        1130,
+        1182,
+        80,
+        30
+      ],
+      "condition": "发现异常"
+    },
+    {
+      "id": "F11",
+      "source": "G02",
+      "target": "T09",
+      "points": [
+        [
+          1366,
+          1220
+        ],
+        [
+          1830,
+          1220
+        ],
+        [
+          1830,
+          1453
+        ]
+      ],
+      "name": "否",
+      "label": [
+        1540,
+        1182,
+        80,
+        30
+      ],
+      "condition": "未发现异常"
+    },
+    {
+      "id": "F12",
+      "source": "T07",
+      "target": "T08",
+      "points": [
+        [
+          830,
+          1267
+        ],
+        [
+          830,
+          1360
+        ],
+        [
+          485,
+          1360
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F13",
+      "source": "T08",
+      "target": "T09",
+      "points": [
+        [
+          330,
+          1407
+        ],
+        [
+          330,
+          1500
+        ],
+        [
+          1675,
+          1500
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F14",
+      "source": "T09",
+      "target": "G03",
+      "points": [
+        [
+          1830,
+          1547
+        ],
+        [
+          1830,
+          1624
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F15",
+      "source": "G03",
+      "target": "T10",
+      "points": [
+        [
+          1794,
+          1660
+        ],
+        [
+          985,
+          1660
+        ]
+      ],
+      "name": "需修正",
+      "label": [
+        1360,
+        1620,
+        190,
+        30
+      ],
+      "condition": "复核结论为需修正"
+    },
+    {
+      "id": "F16",
+      "source": "T10",
+      "target": "T11",
+      "points": [
+        [
+          830,
+          1707
+        ],
+        [
+          830,
+          1840
+        ],
+        [
+          485,
+          1840
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F17",
+      "source": "T11",
+      "target": "T05",
+      "points": [
+        [
+          175,
+          1840
+        ],
+        [
+          130,
+          1840
+        ],
+        [
+          130,
+          940
+        ],
+        [
+          675,
+          940
+        ]
+      ],
+      "name": "确认后重新提交",
+      "label": [
+        360,
+        900,
+        270,
+        30
+      ],
+      "condition": null
+    },
+    {
+      "id": "F18",
+      "source": "G03",
+      "target": "T12",
+      "points": [
+        [
+          1866,
+          1660
+        ],
+        [
+          2010,
+          1660
+        ],
+        [
+          2010,
+          1900
+        ],
+        [
+          1985,
+          1900
+        ]
+      ],
+      "name": "待核查",
+      "label": [
+        1870,
+        1618,
+        138,
+        32
+      ],
+      "condition": "证据或关键字段仍待核查"
+    },
+    {
+      "id": "F19",
+      "source": "T12",
+      "target": "W01",
+      "points": [
+        [
+          1830,
+          1947
+        ],
+        [
+          1830,
+          2066
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F20",
+      "source": "W01",
+      "target": "T09",
+      "points": [
+        [
+          1854,
+          2090
+        ],
+        [
+          2040,
+          2090
+        ],
+        [
+          2040,
+          1500
+        ],
+        [
+          1985,
+          1500
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F21",
+      "source": "G03",
+      "target": "T13",
+      "points": [
+        [
+          1830,
+          1696
+        ],
+        [
+          1830,
+          1750
+        ],
+        [
+          1330,
+          1750
+        ],
+        [
+          1330,
+          1983
+        ]
+      ],
+      "name": "通过",
+      "label": [
+        1525,
+        1710,
+        110,
+        30
+      ],
+      "condition": "授权人员复核通过"
+    },
+    {
+      "id": "F22",
+      "source": "T13",
+      "target": "G04",
+      "points": [
+        [
+          1330,
+          2077
+        ],
+        [
+          1330,
+          2184
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    },
+    {
+      "id": "F23",
+      "source": "G04",
+      "target": "T07",
+      "points": [
+        [
+          1294,
+          2220
+        ],
+        [
+          1050,
+          2220
+        ],
+        [
+          1050,
+          1160
+        ],
+        [
+          830,
+          1160
+        ],
+        [
+          830,
+          1173
+        ]
+      ],
+      "name": "否 记录异议并回查",
+      "label": [
+        1075,
+        2250,
+        252,
+        32
+      ],
+      "condition": "接收方提出异议或未确认"
+    },
+    {
+      "id": "F24",
+      "source": "G04",
+      "target": "T14",
+      "points": [
+        [
+          1330,
+          2256
+        ],
+        [
+          1330,
+          2360
+        ],
+        [
+          485,
+          2360
+        ]
+      ],
+      "name": "是",
+      "label": [
+        1360,
+        2300,
+        80,
+        30
+      ],
+      "condition": "接收方明确确认"
+    },
+    {
+      "id": "F25",
+      "source": "T14",
+      "target": "E01",
+      "points": [
+        [
+          330,
+          2407
+        ],
+        [
+          330,
+          2469
+        ]
+      ],
+      "name": "",
+      "label": null,
+      "condition": null
+    }
+  ]
+}

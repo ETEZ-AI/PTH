@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_TargetHandover" targetNamespace="https://example.invalid/fde/handover-demo" exporter="FDE synthetic demo" exporterVersion="0.1">
+  <bpmn:documentation>合成数据演示；规则模式，AI 未接入；非执行 BPMN，不是流程引擎。真实确认应来自原有授权渠道。</bpmn:documentation>
+  <bpmn:collaboration id="Collaboration_Target">
+    <bpmn:participant id="Participant_Target" name="交接闭环演示" processRef="Process_Target"/>
+  </bpmn:collaboration>
+  <bpmn:process id="Process_Target" name="生产岗位培训与工序交接目标闭环" isExecutable="false">
+    <bpmn:documentation>对应 requirements.md 第 6 节。G06、G07、W01 为明确修订确认和等待路径增加的建模节点。</bpmn:documentation>
+    <bpmn:laneSet id="LaneSet_Target">
+      <bpmn:lane id="L1" name="现场／当班">
+        <bpmn:flowNodeRef>T01</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T04</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G02</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T08</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L2" name="规则辅助">
+        <bpmn:flowNodeRef>T02</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G01</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T03</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T11</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G05</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L3" name="协调／资料">
+        <bpmn:flowNodeRef>S01</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T05</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>W01</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T06</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G06</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>T12</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>E01</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L4" name="业务负责人">
+        <bpmn:flowNodeRef>T07</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G07</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L5" name="质量复核">
+        <bpmn:flowNodeRef>T09</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G03</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="L6" name="接收人员">
+        <bpmn:flowNodeRef>T10</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>G04</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="S01" name="建立交接任务">
+      <bpmn:outgoing>F01</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="T01" name="准备资料">
+      <bpmn:incoming>F01</bpmn:incoming>
+      <bpmn:outgoing>F02</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="T02" name="只读读取与关联">
+      <bpmn:documentation>确定性规则辅助。当前演示未接入 AI 或真实源系统；源数据只读。</bpmn:documentation>
+      <bpmn:incoming>F02</bpmn:incoming>
+      <bpmn:incoming>F13</bpmn:incoming>
+      <bpmn:incoming>F16</bpmn:incoming>
+      <bpmn:outgoing>F03</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G01" name="资料可用？" gatewayDirection="Diverging">
+      <bpmn:incoming>F03</bpmn:incoming>
+      <bpmn:outgoing>F04</bpmn:outgoing>
+      <bpmn:outgoing>F05</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T03" name="规则辅助核对">
+      <bpmn:documentation>确定性规则辅助。当前演示未接入 AI 或真实源系统；源数据只读。</bpmn:documentation>
+      <bpmn:incoming>F04</bpmn:incoming>
+      <bpmn:outgoing>F06</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="T04" name="当班字段核对">
+      <bpmn:incoming>F06</bpmn:incoming>
+      <bpmn:outgoing>F07</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G02" name="存在阻塞？" gatewayDirection="Diverging">
+      <bpmn:incoming>F07</bpmn:incoming>
+      <bpmn:outgoing>F08</bpmn:outgoing>
+      <bpmn:outgoing>F09</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T05" name="登记问题并分派">
+      <bpmn:incoming>F05</bpmn:incoming>
+      <bpmn:incoming>F09</bpmn:incoming>
+      <bpmn:incoming>F22</bpmn:incoming>
+      <bpmn:incoming>F25</bpmn:incoming>
+      <bpmn:incoming>F28</bpmn:incoming>
+      <bpmn:outgoing>F10</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateCatchEvent id="W01" name="补证或处理条件就绪">
+      <bpmn:incoming>F10</bpmn:incoming>
+      <bpmn:outgoing>F11</bpmn:outgoing>
+      <bpmn:conditionalEventDefinition id="Condition_W01">
+        <bpmn:condition xsi:type="bpmn:tFormalExpression">补充证据或人工处理条件已就绪，责任人员可继续办理</bpmn:condition>
+      </bpmn:conditionalEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="T06" name="补充或修正">
+      <bpmn:incoming>F11</bpmn:incoming>
+      <bpmn:incoming>F17</bpmn:incoming>
+      <bpmn:incoming>F21</bpmn:incoming>
+      <bpmn:outgoing>F12</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G06" name="有业务变更？" gatewayDirection="Diverging">
+      <bpmn:incoming>F12</bpmn:incoming>
+      <bpmn:outgoing>F13</bpmn:outgoing>
+      <bpmn:outgoing>F14</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T07" name="确认业务变更">
+      <bpmn:documentation>独立人工确认。演示记录无正式审批效力；真实试点读取或引用原有授权渠道的回执。</bpmn:documentation>
+      <bpmn:incoming>F14</bpmn:incoming>
+      <bpmn:outgoing>F15</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G07" name="负责人确认？" gatewayDirection="Diverging">
+      <bpmn:incoming>F15</bpmn:incoming>
+      <bpmn:outgoing>F16</bpmn:outgoing>
+      <bpmn:outgoing>F17</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T08" name="提交质量复核">
+      <bpmn:incoming>F08</bpmn:incoming>
+      <bpmn:outgoing>F18</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="T09" name="人工质量复核">
+      <bpmn:documentation>独立人工确认。演示记录无正式审批效力；真实试点读取或引用原有授权渠道的回执。</bpmn:documentation>
+      <bpmn:incoming>F18</bpmn:incoming>
+      <bpmn:outgoing>F19</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G03" name="质量结论" gatewayDirection="Diverging">
+      <bpmn:incoming>F19</bpmn:incoming>
+      <bpmn:outgoing>F20</bpmn:outgoing>
+      <bpmn:outgoing>F21</bpmn:outgoing>
+      <bpmn:outgoing>F22</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T10" name="接收核对">
+      <bpmn:documentation>独立人工确认。演示记录无正式审批效力；真实试点读取或引用原有授权渠道的回执。</bpmn:documentation>
+      <bpmn:incoming>F20</bpmn:incoming>
+      <bpmn:outgoing>F23</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G04" name="接收确认？" gatewayDirection="Diverging">
+      <bpmn:incoming>F23</bpmn:incoming>
+      <bpmn:outgoing>F24</bpmn:outgoing>
+      <bpmn:outgoing>F25</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T11" name="归档条件检查">
+      <bpmn:documentation>确定性规则辅助。当前演示未接入 AI 或真实源系统；源数据只读。</bpmn:documentation>
+      <bpmn:incoming>F24</bpmn:incoming>
+      <bpmn:outgoing>F26</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="G05" name="闭环条件满足？" gatewayDirection="Diverging">
+      <bpmn:incoming>F26</bpmn:incoming>
+      <bpmn:outgoing>F27</bpmn:outgoing>
+      <bpmn:outgoing>F28</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="T12" name="归档证据包">
+      <bpmn:incoming>F27</bpmn:incoming>
+      <bpmn:outgoing>F29</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="E01" name="交接记录闭环">
+      <bpmn:incoming>F29</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="F01" sourceRef="S01" targetRef="T01"/>
+    <bpmn:sequenceFlow id="F02" sourceRef="T01" targetRef="T02"/>
+    <bpmn:sequenceFlow id="F03" sourceRef="T02" targetRef="G01"/>
+    <bpmn:sequenceFlow id="F04" sourceRef="G01" targetRef="T03" name="是">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">资料唯一且可追溯</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F05" sourceRef="G01" targetRef="T05" name="否：读取失败／歧义">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">读取失败、歧义或资料过期</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F06" sourceRef="T03" targetRef="T04"/>
+    <bpmn:sequenceFlow id="F07" sourceRef="T04" targetRef="G02"/>
+    <bpmn:sequenceFlow id="F08" sourceRef="G02" targetRef="T08" name="否">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">无关键阻塞问题且当班字段核对完成</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F09" sourceRef="G02" targetRef="T05" name="是">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">存在未解决的关键问题</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F10" sourceRef="T05" targetRef="W01"/>
+    <bpmn:sequenceFlow id="F11" sourceRef="W01" targetRef="T06"/>
+    <bpmn:sequenceFlow id="F12" sourceRef="T06" targetRef="G06"/>
+    <bpmn:sequenceFlow id="F13" sourceRef="G06" targetRef="T02" name="仅补证：重新核对">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">无业务变更，仅补充证据</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F14" sourceRef="G06" targetRef="T07" name="有">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">涉及需授权确认的业务变更</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F15" sourceRef="T07" targetRef="G07"/>
+    <bpmn:sequenceFlow id="F16" sourceRef="G07" targetRef="T02" name="确认后重核">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">对应授权负责人已确认当前修订</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F17" sourceRef="G07" targetRef="T06" name="退回修正">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">业务负责人退回且说明理由</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F18" sourceRef="T08" targetRef="T09"/>
+    <bpmn:sequenceFlow id="F19" sourceRef="T09" targetRef="G03"/>
+    <bpmn:sequenceFlow id="F20" sourceRef="G03" targetRef="T10" name="通过">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">质量人员确认本修订通过</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F21" sourceRef="G03" targetRef="T06" name="退回修改">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">质量人员退回修改并说明理由</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F22" sourceRef="G03" targetRef="T05" name="待核查">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">质量人员判定证据或关键字段待核查</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F23" sourceRef="T10" targetRef="G04"/>
+    <bpmn:sequenceFlow id="F24" sourceRef="G04" targetRef="T11" name="接受">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">被指定接收人接受质量通过的同一修订</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F25" sourceRef="G04" targetRef="T05" name="退回：登记异议">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">接收人退回且说明理由</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F26" sourceRef="T11" targetRef="G05"/>
+    <bpmn:sequenceFlow id="F27" sourceRef="G05" targetRef="T12" name="是">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">全部闭环条件满足且归档权限有效</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F28" sourceRef="G05" targetRef="T05" name="否：缺证／修订失效">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">缺少有效证据、确认链或修订已失效</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="F29" sourceRef="T12" targetRef="E01"/>
+    <bpmn:textAnnotation id="Note1">
+      <bpmn:text>源系统只读：保留来源 ID、原始值、版本及读取时间；规则输出不是业务审批结论。</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Note2">
+      <bpmn:text>业务变更、质量复核、接收分别人工确认同一修订；关键修订使相关下游确认失效。真实试点仍需原有授权渠道的可核验回执。</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Note3">
+      <bpmn:text>W01 等待不结案；暂停为全局办理限制，恢复后重新核对有效性。归档仅代表交接记录闭环，不代表设备操作或生产放行。</bpmn:text>
+    </bpmn:textAnnotation>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_Target">
+    <bpmndi:BPMNPlane id="Plane_Target" bpmnElement="Collaboration_Target">
+      <bpmndi:BPMNShape id="Participant_di" bpmnElement="Participant_Target" isHorizontal="true">
+        <dc:Bounds x="25" y="180" width="3040" height="1020"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L1_di" bpmnElement="L1" isHorizontal="true">
+        <dc:Bounds x="55" y="180" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L2_di" bpmnElement="L2" isHorizontal="true">
+        <dc:Bounds x="55" y="350" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L3_di" bpmnElement="L3" isHorizontal="true">
+        <dc:Bounds x="55" y="520" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L4_di" bpmnElement="L4" isHorizontal="true">
+        <dc:Bounds x="55" y="690" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L5_di" bpmnElement="L5" isHorizontal="true">
+        <dc:Bounds x="55" y="860" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="L6_di" bpmnElement="L6" isHorizontal="true">
+        <dc:Bounds x="55" y="1030" width="3010" height="170"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S01_di" bpmnElement="S01">
+        <dc:Bounds x="209.0" y="589.0" width="42" height="42"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="170" y="647" width="190" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T01_di" bpmnElement="T01">
+        <dc:Bounds x="340.0" y="230.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T02_di" bpmnElement="T02">
+        <dc:Bounds x="530.0" y="400.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G01_di" bpmnElement="G01" isMarkerVisible="true">
+        <dc:Bounds x="788.0" y="403.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="755" y="473" width="150" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T03_di" bpmnElement="T03">
+        <dc:Bounds x="930.0" y="400.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T04_di" bpmnElement="T04">
+        <dc:Bounds x="1130.0" y="230.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G02_di" bpmnElement="G02" isMarkerVisible="true">
+        <dc:Bounds x="1388.0" y="233.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1340" y="188" width="165" height="32"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T05_di" bpmnElement="T05">
+        <dc:Bounds x="1020.0" y="575.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="W01_di" bpmnElement="W01">
+        <dc:Bounds x="1259.0" y="589.0" width="42" height="42"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1196" y="650" width="142" height="60"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T06_di" bpmnElement="T06">
+        <dc:Bounds x="1360.0" y="575.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G06_di" bpmnElement="G06" isMarkerVisible="true">
+        <dc:Bounds x="1628.0" y="578.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1565" y="651" width="185" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T07_di" bpmnElement="T07">
+        <dc:Bounds x="1570.0" y="750.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G07_di" bpmnElement="G07" isMarkerVisible="true">
+        <dc:Bounds x="1848.0" y="753.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1920" y="753" width="205" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T08_di" bpmnElement="T08">
+        <dc:Bounds x="1540.0" y="230.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T09_di" bpmnElement="T09">
+        <dc:Bounds x="1740.0" y="910.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G03_di" bpmnElement="G03" isMarkerVisible="true">
+        <dc:Bounds x="1978.0" y="913.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1938" y="870" width="155" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T10_di" bpmnElement="T10">
+        <dc:Bounds x="2090.0" y="1080.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G04_di" bpmnElement="G04" isMarkerVisible="true">
+        <dc:Bounds x="2338.0" y="1083.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2290" y="1153" width="170" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T11_di" bpmnElement="T11">
+        <dc:Bounds x="2430.0" y="400.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="G05_di" bpmnElement="G05" isMarkerVisible="true">
+        <dc:Bounds x="2638.0" y="403.0" width="64" height="64"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2575" y="365" width="190" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="T12_di" bpmnElement="T12">
+        <dc:Bounds x="2730.0" y="575.0" width="180" height="70"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="E01_di" bpmnElement="E01">
+        <dc:Bounds x="2969.0" y="589.0" width="42" height="42"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2845" y="650" width="230" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="F01_di" bpmnElement="F01">
+        <di:waypoint x="251" y="610"/>
+        <di:waypoint x="430" y="610"/>
+        <di:waypoint x="430" y="300"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F02_di" bpmnElement="F02">
+        <di:waypoint x="520" y="265"/>
+        <di:waypoint x="620" y="265"/>
+        <di:waypoint x="620" y="400"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F03_di" bpmnElement="F03">
+        <di:waypoint x="710" y="435"/>
+        <di:waypoint x="788" y="435"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F04_di" bpmnElement="F04">
+        <di:waypoint x="852" y="435"/>
+        <di:waypoint x="930" y="435"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="871" y="403" width="50" height="26"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F05_di" bpmnElement="F05">
+        <di:waypoint x="820" y="467"/>
+        <di:waypoint x="820" y="610"/>
+        <di:waypoint x="1020" y="610"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="835" y="570" width="178" height="30"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F06_di" bpmnElement="F06">
+        <di:waypoint x="1110" y="435"/>
+        <di:waypoint x="1220" y="435"/>
+        <di:waypoint x="1220" y="300"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F07_di" bpmnElement="F07">
+        <di:waypoint x="1310" y="265"/>
+        <di:waypoint x="1388" y="265"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F08_di" bpmnElement="F08">
+        <di:waypoint x="1452" y="265"/>
+        <di:waypoint x="1540" y="265"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1468" y="231" width="55" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F09_di" bpmnElement="F09">
+        <di:waypoint x="1420" y="297"/>
+        <di:waypoint x="1420" y="510"/>
+        <di:waypoint x="1110" y="510"/>
+        <di:waypoint x="1110" y="575"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1434" y="340" width="54" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F10_di" bpmnElement="F10">
+        <di:waypoint x="1200" y="610"/>
+        <di:waypoint x="1259" y="610"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F11_di" bpmnElement="F11">
+        <di:waypoint x="1301" y="610"/>
+        <di:waypoint x="1360" y="610"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F12_di" bpmnElement="F12">
+        <di:waypoint x="1540" y="610"/>
+        <di:waypoint x="1628" y="610"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F13_di" bpmnElement="F13">
+        <di:waypoint x="1660" y="578"/>
+        <di:waypoint x="1660" y="545"/>
+        <di:waypoint x="620" y="545"/>
+        <di:waypoint x="620" y="470"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="663" y="513" width="274" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F14_di" bpmnElement="F14">
+        <di:waypoint x="1660" y="642"/>
+        <di:waypoint x="1660" y="750"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1670" y="707" width="52" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F15_di" bpmnElement="F15">
+        <di:waypoint x="1750" y="785"/>
+        <di:waypoint x="1848" y="785"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F16_di" bpmnElement="F16">
+        <di:waypoint x="1880" y="753"/>
+        <di:waypoint x="1880" y="525"/>
+        <di:waypoint x="520" y="525"/>
+        <di:waypoint x="520" y="435"/>
+        <di:waypoint x="530" y="435"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1893" y="690" width="160" height="27"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F17_di" bpmnElement="F17">
+        <di:waypoint x="1880" y="817"/>
+        <di:waypoint x="1880" y="850"/>
+        <di:waypoint x="1450" y="850"/>
+        <di:waypoint x="1450" y="645"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1535" y="817" width="150" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F18_di" bpmnElement="F18">
+        <di:waypoint x="1720" y="265"/>
+        <di:waypoint x="1830" y="265"/>
+        <di:waypoint x="1830" y="910"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F19_di" bpmnElement="F19">
+        <di:waypoint x="1920" y="945"/>
+        <di:waypoint x="1978" y="945"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F20_di" bpmnElement="F20">
+        <di:waypoint x="2010" y="977"/>
+        <di:waypoint x="2010" y="1115"/>
+        <di:waypoint x="2090" y="1115"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2023" y="1050" width="75" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F21_di" bpmnElement="F21">
+        <di:waypoint x="1978" y="945"/>
+        <di:waypoint x="1950" y="945"/>
+        <di:waypoint x="1950" y="895"/>
+        <di:waypoint x="1335" y="895"/>
+        <di:waypoint x="1335" y="560"/>
+        <di:waypoint x="1450" y="560"/>
+        <di:waypoint x="1450" y="575"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1525" y="906" width="155" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F22_di" bpmnElement="F22">
+        <di:waypoint x="2042" y="945"/>
+        <di:waypoint x="2110" y="945"/>
+        <di:waypoint x="2110" y="720"/>
+        <di:waypoint x="1140" y="720"/>
+        <di:waypoint x="1140" y="645"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2140" y="808" width="100" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F23_di" bpmnElement="F23">
+        <di:waypoint x="2270" y="1115"/>
+        <di:waypoint x="2338" y="1115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F24_di" bpmnElement="F24">
+        <di:waypoint x="2402" y="1115"/>
+        <di:waypoint x="2520" y="1115"/>
+        <di:waypoint x="2520" y="470"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2410" y="1070" width="88" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F25_di" bpmnElement="F25">
+        <di:waypoint x="2370" y="1147"/>
+        <di:waypoint x="2370" y="1190"/>
+        <di:waypoint x="1080" y="1190"/>
+        <di:waypoint x="1080" y="645"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1580" y="1151" width="212" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F26_di" bpmnElement="F26">
+        <di:waypoint x="2610" y="435"/>
+        <di:waypoint x="2638" y="435"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F27_di" bpmnElement="F27">
+        <di:waypoint x="2702" y="435"/>
+        <di:waypoint x="2820" y="435"/>
+        <di:waypoint x="2820" y="575"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2740" y="401" width="52" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F28_di" bpmnElement="F28">
+        <di:waypoint x="2670" y="467"/>
+        <di:waypoint x="2670" y="490"/>
+        <di:waypoint x="1070" y="490"/>
+        <di:waypoint x="1070" y="575"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2230" y="495" width="255" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F29_di" bpmnElement="F29">
+        <di:waypoint x="2910" y="610"/>
+        <di:waypoint x="2969" y="610"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Note1_di" bpmnElement="Note1">
+        <dc:Bounds x="70" y="1267" width="2940" height="31"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Note2_di" bpmnElement="Note2">
+        <dc:Bounds x="70" y="1306" width="2940" height="31"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Note3_di" bpmnElement="Note3">
+        <dc:Bounds x="70" y="1345" width="2940" height="31"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
